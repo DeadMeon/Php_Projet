@@ -10,12 +10,19 @@
 
 
               <div class="topnav">
-                     <a href="#">Acceuil</a>
-                     <a href="#">Modification de la liste</a>
+                     <a href="Acceuil.php">Acceuil</a>
+                     <div class="dropdown">
+                            <button class="dropbtn">Modification de la liste</button>
+                            <div class="dropdown-content">
+                                   <a href="Ajouter.php">Ajouter</a>
+                                   <a href="Modifier.php">Modifier</a>
+                                   <a href="Supprimer.php">Supprimer</a>
+                            </div>
+                     </div>
                      <div class="deco">
   	                            <a href="#" >Deconnection</a>
-                            </div>
-                    </div>
+                     </div>
+              </div>
 
               <div class="row">
                      <div class="column side">
