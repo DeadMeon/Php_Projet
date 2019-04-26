@@ -17,7 +17,6 @@ body {
 
 /* Style the top navigation bar */
 .topnav {
-  overflow: hidden;
   background-color: #000;
 }
 
@@ -85,22 +84,23 @@ body {
   color: black;
 }
 
+
+
 /* Create three unequal columns that floats next to each other */
 .column {
+  float: left;
   padding: 10px;
   color: #fff;
   background-color: #000;
 }
 
 /* Left and right column */
-.column.side {
-  float: left;
+.side {
   width: 25%;
 }
 
 /* Middle column */
-.column.middle {
-  float: left;
+.middle {
   width: 75%;
 }
 
