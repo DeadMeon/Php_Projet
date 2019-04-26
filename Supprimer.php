@@ -20,7 +20,7 @@
                             </div>
                      </div>
                      <div class="deco">
-  	                            <a href="#" >Deconnection</a>
+  	                            <a href="Deconnection.php" >Deconnection</a>
                             </div>
                     </div>
 
@@ -32,12 +32,16 @@
 
                      <div class="column middle">
                             <?php
+                            session_start();
                             include 'fonction.php';
 
+                            $strConnex="host=" . $tab[0] . " dbname=" . $tab[1] . " user=" . $tab[1] . " password=" . $tab[2];
+                            $ptrDB = pg_connect($strConnex);
+
                             $site = intoBalise("Modification de la base de donnees", "h2");
-	                     $site .= intoBalise("Ajouter une entrer", "a", array('href="#"', 'class="button ajouter"'));
-                            $site .= intoBalise("Mettre a jour une entrer", "a", array('href="#"', 'class="button update"'));
-                            $site .= intoBalise("Supprimer une entrer", "a", array('href="#"', 'class="button supprimer"'));
+                            $site .= intoBalise("Ajouter une entrer", "a", array('href="Ajouter.php"', 'class="button ajouter"'));
+                            $site .= intoBalise("Mettre a jour une entrer", "a", array('href="Modifier.php"', 'class="button update"'));
+                            $site .= intoBalise("Supprimer une entrer", "a", array('href="Supprimer.php"', 'class="button supprimer"'));
                             echo $site;
                             ?>
                             <form action="/Acceuil.php" method="get" name="sup">

@@ -32,19 +32,21 @@
 
                      <div class="column middle">
                             <?php
+                            session_start();
                             include 'fonction.php';
-                            include 'connexion.php';
 
-                            $ptrDB = connexion();
+                            $strConnex="host=" . $tab[0] . " dbname=" . $tab[1] . " user=" . $tab[1] . " password=" . $tab[2];
+                            $ptrDB = pg_connect($strConnex);
+
                             $query = "SELECT * FROM site_eleve WHERE site_valid_eleve";
                             $sortie = pg_query($ptrDB, $query);
 
 
                             $ids = array();
                             while($a = pg_fetch_assoc($sortie)) {
-                     	       $id = array($a['id_eleve'], true);
-                     		array_push($ids, $id);
-                     	}
+                     	        $id = array($a['id_eleve'], true);
+                     		      array_push($ids, $id);
+                           	}
                             $titre = array("Identifiant", "Site");
 
                             $site = intoBalise("Acces au site internet", "h2");

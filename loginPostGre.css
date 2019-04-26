@@ -1,0 +1,50 @@
+body {
+       margin: auto;
+       width: 300px;
+       padding-top: 200px;
+       background-color: black;
+       color: white;
+       overflow: visible;
+       font-family: 'Raleway', sans-serif;
+}
+
+h2, label, h3 {
+       text-align: center;
+       color: #ccc;
+}
+
+input[type=text], input[type=password] {
+       width: 100%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       box-sizing: border-box;
+       border: none;
+       border-bottom: 3px solid #ccc;
+       -webkit-transition: 0.5s;
+       transition: 0.5s;
+       outline: none;
+       background-color: black;
+       color: white;
+}
+
+input:focus {
+       border-bottom:  3px solid #555;
+}
+
+input[type=submit], input[type=reset]{
+       background-color: #111;
+       color: #aaa;
+       width: 49%;
+       padding: 6px 20px;
+       margin: 8px 0;
+       box-sizing: border-box;
+       border: none;
+       -webkit-transition: 0.5s;
+       transition: 0.5s;
+       outline: none;
+}
+
+input[type=submit]:hover, input[type=reset]:hover{
+       background-color: #aaa;
+       color: black;
+}
