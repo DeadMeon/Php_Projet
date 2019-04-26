@@ -18,14 +18,6 @@ function sqlLigne(string $strConnex, string $tab)
 
 
 
-function sqlDelete(string $strConnex, string $id)
-{
-  $ptrDB = pg_connect($strConnex);
-  $ptrQuery = pg_execute($ptrDB, "Delete", [$id]);
-  $nbLignes= pg_affected_rows ($ptrQuery);
-  echo "<p>La requête a supprimé $nbLignes ligne(s).</p>";
-}
-
 
 function sqlDescription(string $strConnex, array $tab)
 {

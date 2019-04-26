@@ -30,6 +30,7 @@ include 'strConnex.php';
                     </div>
 
               <div class="row">
+                <div class="column">
                      <div class="column side">
                             <h2>Information</h2>
                             <p>Ce site a ete cree dans le cadre d'un projet liant le langage PHP au langage SQL.</p>
@@ -45,21 +46,41 @@ include 'strConnex.php';
                             $site .= intoBalise("Supprimer une entrer", "a", array('href="Supprimer.php"', 'class="button supprimer"'));
                             echo $site;
                             ?>
-                            <form action="/Acceuil.php" method="get" name="sup">
+                            <form action="Acceuil.php" method="get">
+                              <input type="text" name="type" value="maj" hidden>
   		                     <fieldset>
                                           <legend>Modifier une entrer :</legend>
     		                            <legend>Id de l'étudiant :</legend>
     		                            <input type="text" name="key" required>
           	                            <legend>A un dossier "public_html" ?</legend>
     		                            <select name="publichtml">
-   				                     <option value="true">Oui</option>
-   				                     <option value="false">Non</option>
+   				                     <option value="TRUE">Oui</option>
+   				                     <option value="FALSE">Non</option>
  			                     </select>
           	                            <legend>Promotion de l'étudiant :</legend>
-    		                            <input type="text" name="promo" value="L1">
+                                        <select name="promo">
+                                            <?php
+                                            $ptrDB = pg_connect($strConnex);
+
+                                            $query = "SELECT nom_promo FROM promo";
+                                            $sortie = pg_query($ptrDB, $query);
+
+                                            $site = "";
+                                            while($a = pg_fetch_assoc($sortie)) {
+                                              $site .= intoBalise($a['nom_promo'], "option", array('value="'. $a['nom_promo'] .'"'));
+                                            }
+
+                                            echo $site;
+                                            ?>
+                                              <!--
+                                              fonction insert promo
+                                              <option value="autre">Autre</option>
+                                              -->
+                                        </select>
     		                            <input type="submit" value="Modifier">
   		                     </fieldset>
 	                     </form>
+                     </div>
                      </div>
               </div>
               <div class="footer">

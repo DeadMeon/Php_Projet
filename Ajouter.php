@@ -30,6 +30,7 @@ include 'strConnex.php';
                     </div>
 
               <div class="row">
+                <div class="column">
                      <div class="column side">
                             <h2>Information</h2>
                             <p>Ce site a ete cree dans le cadre d'un projet liant le langage PHP au langage SQL.</p>
@@ -40,27 +41,47 @@ include 'strConnex.php';
                             $ptrDB = pg_connect($strConnex);
 
                             $site = intoBalise("Modification de la base de donnees", "h2");
-	                           $site .= intoBalise("Ajouter une entrer", "a", array('href="Ajouter.php"', 'class="button ajouter"'));
+	                          $site .= intoBalise("Ajouter une entrer", "a", array('href="Ajouter.php"', 'class="button ajouter"'));
                             $site .= intoBalise("Mettre a jour une entrer", "a", array('href="Modifier.php"', 'class="button update"'));
                             $site .= intoBalise("Supprimer une entrer", "a", array('href="Supprimer.php"', 'class="button supprimer"'));
                             echo $site;
                             ?>
-                            <form action="/Acceuil.php" method="get" name="sup">
+                            <form action="Acceuil.php" method="get">
+                              <input type="text" name="type" value="add" hidden>
   		                     <fieldset>
-                                          <legend>Ajouter une entrer :</legend>
+                                    <legend>Ajouter une entrer :</legend>
     		                            <legend>Id de l'étudiant :</legend>
     		                            <input type="text" name="key" required>
-          	                            <legend>A un dossier "public_html" ?</legend>
+          	                        <legend>A un dossier "public_html" ?</legend>
     		                            <select name="publichtml">
-   				                     <option value="true">Oui</option>
-   				                     <option value="false">Non</option>
- 			                     </select>
-          	                            <legend>Promotion de l'étudiant :</legend>
-    		                            <input type="text" name="promo" value="L1">
+   				                               <option value="TRUE">Oui</option>
+   				                               <option value="FALSE">Non</option>
+ 			                              </select>
+          	                        <legend>Promotion de l'étudiant :</legend>
+                                    <select name="promo">
+                                        <?php
+                                        $ptrDB = pg_connect($strConnex);
+
+                                        $query = "SELECT nom_promo FROM promo";
+                                        $sortie = pg_query($ptrDB, $query);
+
+                                        $site = "";
+                                        while($a = pg_fetch_assoc($sortie)) {
+                                          $site .= intoBalise($a['nom_promo'], "option", array('value="'. $a['nom_promo'] .'"'));
+                                        }
+
+                                        echo $site;
+                                        ?>
+                                          <!--
+                                          fonction insert promo
+                                          <option value="autre">Autre</option>
+                                          -->
+                                    </select>
     		                            <input type="submit" value="Ajouter">
   		                     </fieldset>
 	                     </form>
                      </div>
+                   </div>
               </div>
               <div class="footer">
                      <p>Site crée par Aziz M., Richard P. et Imran T.</p>

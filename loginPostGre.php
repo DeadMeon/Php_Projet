@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'valideForm.php';
-include 'connectPostGre.php';
+include 'strConnex.php';
 //include 'fonc/SqlCommand.php';
 
 
@@ -12,7 +12,10 @@ if (isset($tab)) {
     $_SESSION['host'] = $_POST[$tab[0]];
     $_SESSION['user'] = $_POST[$tab[1]];
     $_SESSION['pass'] = $_POST[$tab[2]];
-    include("Acceuil.php");
+    $ptrDB = pg_connect($strConnex);
+    $query = file_get_contents("bdd_pgsql.sql");
+    pg_query($ptrDB, $query);
+    header("Location: Acceuil.php");
   }
 }else {
     include("index.php");

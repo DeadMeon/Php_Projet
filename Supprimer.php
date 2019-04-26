@@ -30,6 +30,7 @@ include 'strConnex.php';
                     </div>
 
               <div class="row">
+                <div class="column">
                      <div class="column side">
                             <h2>Information</h2>
                             <p>Ce site a ete cree dans le cadre d'un projet liant le langage PHP au langage SQL.</p>
@@ -45,7 +46,8 @@ include 'strConnex.php';
                             $site .= intoBalise("Supprimer une entrer", "a", array('href="Supprimer.php"', 'class="button supprimer"'));
                             echo $site;
                             ?>
-                            <form action="/Acceuil.php" method="get" name="sup">
+                            <form action="Acceuil.php" method="get">
+                              <input type="text" name="type" value="sup" hidden>
   		                     <fieldset>
     		                            <legend>Supprimer une entrer :</legend>
           	                            <br>
@@ -55,6 +57,7 @@ include 'strConnex.php';
   		                     </fieldset>
 	                     </form>
                      </div>
+                   </div>
               </div>
               <div class="footer">
                      <p>Site crée par Aziz M., Richard P. et Imran T.</p>
