@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'fonction.php';
+include 'strConnex.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
        <head>
@@ -32,10 +37,6 @@
 
                      <div class="column middle">
                             <?php
-                            session_start();
-                            include 'fonction.php';
-
-                            $strConnex="host=" . $tab[0] . " dbname=" . $tab[1] . " user=" . $tab[1] . " password=" . $tab[2];
                             $ptrDB = pg_connect($strConnex);
 
                             $site = intoBalise("Modification de la base de donnees", "h2");

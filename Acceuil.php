@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'fonction.php';
+include 'strConnex.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
        <head>
@@ -20,7 +25,7 @@
                             </div>
                      </div>
                      <div class="deco">
-  	                            <a href="#" >Deconnection</a>
+  	                            <a href="Deconnection.php" >Deconnection</a>
                      </div>
               </div>
 
@@ -32,10 +37,6 @@
 
                      <div class="column middle">
                             <?php
-                            session_start();
-                            include 'fonction.php';
-
-                            $strConnex="host=" . $tab[0] . " dbname=" . $tab[1] . " user=" . $tab[1] . " password=" . $tab[2];
                             $ptrDB = pg_connect($strConnex);
 
                             $query = "SELECT * FROM site_eleve WHERE site_valid_eleve";

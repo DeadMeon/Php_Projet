@@ -43,10 +43,9 @@ body {
 
 .dropbtn {
   background-color: #000;
-  display: block;
 	color: #fff;
-       text-align: center;
-       padding: 14px 16px;;
+  text-align: center;
+  padding: 14px 16px;
   border: none;
   cursor: pointer;
 }
@@ -57,6 +56,7 @@ body {
 }
 
 .dropdown-content {
+  overflow: auto;
   display: none;
   position: absolute;
   background-color: #ccc;
@@ -72,7 +72,7 @@ body {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {
   display: block;

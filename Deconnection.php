@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_abort();
-include '';
- ?>
+header("Location: index.php");
+?>
