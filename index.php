@@ -11,7 +11,7 @@
         <div id="question">
             <label for="host">Host :</label>
             <div id="form">
-                <input type="text" name="host" required>
+                <input type="text" name="host" value="ust-infoserv.univlehavre.lan" required>
                 <!--'required' ou 'value=<php if (isset($_POST["host"])) print "'".$_POST["host"]."'"; else echo "''"; ?>'-->
             </div>
             <br>

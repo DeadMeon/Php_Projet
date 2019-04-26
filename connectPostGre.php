@@ -4,7 +4,7 @@ function connectPostGre($method, $tab){
 	$ptrDB = pg_connect($strConnex);
 	if ($ptrDB) {
   	//print "<p>Connexion établie !</p>";
-  	include("html/connectPostGre.html");
+  	include("Acceuil.php");
 	} else {
   	print "<p>Erreur lors de la connexion ...</p>";
   	exit;
