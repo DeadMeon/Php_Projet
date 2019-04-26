@@ -12,7 +12,7 @@ if (isset($tab)) {
     $_SESSION['host'] = $_POST[$tab[0]];
     $_SESSION['user'] = $_POST[$tab[1]];
     $_SESSION['pass'] = $_POST[$tab[2]];
-    connectPostGre($_POST, $tab);
+    include("Acceuil.php");
   }
 }else {
     include("index.php");
