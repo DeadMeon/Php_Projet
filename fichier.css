@@ -1,49 +1,49 @@
 * {
-       box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-       margin: 0;
-       background-color: #000;
-       color: #fff;
-       font-family: 'Nunito', sans-serif;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Style the header */
 .header {
-       padding: 20px;
-       text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Style the top navigation bar */
 .topnav {
-       overflow: hidden;
-       background-color: #000;
+  overflow: hidden;
+  background-color: #000;
 }
 
 .deco {
-       float: right;
+  float: right;
 }
 
 /* Style the topnav links */
 .topnav a {
-       float: left;
-       display: block;
-       color: #fff;
-       text-align: center;
-       padding: 14px 16px;
-       text-decoration: none;
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 /* Change color on hover */
 .topnav a:hover {
-       background-color: #ddd;
-       color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .dropbtn {
   background-color: #000;
-	color: #fff;
+  color: #fff;
   text-align: center;
   padding: 14px 16px;
   border: none;
@@ -61,7 +61,7 @@ body {
   position: absolute;
   background-color: #ccc;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -72,7 +72,9 @@ body {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -80,141 +82,142 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: #ddd;
-  color:black;
+  color: black;
 }
 
 /* Create three unequal columns that floats next to each other */
 .column {
-       float: left;
-       padding: 10px;
-       color: #fff;
-       background-color: #000;
+  padding: 10px;
+  color: #fff;
+  background-color: #000;
 }
 
 /* Left and right column */
 .column.side {
-       width: 25%;
+  float: left;
+  width: 25%;
 }
 
 /* Middle column */
 .column.middle {
-       width: 75%;
+  float: left;
+  width: 75%;
 }
 
 /* Clear floats after the columns */
 .row:after {
-       content: "";
-       display: table;
-       clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-       .column.side, .column.middle {
-              width: 100%;
-       }
+  .column.side, .column.middle {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 385px) {
-       .deco {
-              float: left;
-       }
+  .deco {
+    float: left;
+  }
 }
 
 /* Style the footer */
 .footer {
-       background-color: #000;
-       padding: 10px;
-       text-align: center;
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
 }
 
 table {
-       font-family: arial, sans-serif;
-       border-collapse: collapse;
-       width: 100%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td, th {
-       text-align: left;
-       padding: 8px;
+  text-align: left;
+  padding: 8px;
 }
 
 tr td {
-       background-color: rgba(255, 255, 255, 0.1);
-       border-bottom: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #ddd;
 }
 
 tr:hover td {
-       background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 td>a {
-       color: white;
+  color: white;
 }
 
 .button:link, .button:visited {
-       -webkit-transition: background-color 1s, color 1s;
-       /* Safari */
-       transition: background-color 1s, color 1s;
-       background-color: #222;
-       color: white;
-       padding: 15px 25px;
-       margin: 15px;
-       border-radius: 25px;
-       text-align: center;
-       text-decoration: none;
-       display: inline-block;
+  -webkit-transition: background-color 1s, color 1s;
+  /* Safari */
+  transition: background-color 1s, color 1s;
+  background-color: #222;
+  color: white;
+  padding: 15px 25px;
+  margin: 15px;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .button:hover, .button:active {
-       background-color: #444;
+  background-color: #444;
 }
 
 .button.ajouter:hover, .button.ajouter:active {
-       background-color: green;
+  background-color: green;
 }
 
 .button.supprimer:hover, .button.supprimer:active {
-       background-color: red;
+  background-color: red;
 }
 
 .button.update:hover, .button.update:active {
-       background-color: yellow;
-       color: #000;
+  background-color: yellow;
+  color: #000;
 }
 
 input, select {
-       width: 100%;
-       padding: 16px 20px;
-       -webkit-transition: border-bottom 1s, background-color 1s;
-       /* Safari */
-       transition: border-bottom 1s, background-color 1s;
-       border: none;
-       border-bottom: 2px solid #222;
-       background-color: #222;
-       color: white;
-       margin-bottom: 10px;
+  width: 100%;
+  padding: 16px 20px;
+  -webkit-transition: border-bottom 1s, background-color 1s;
+  /* Safari */
+  transition: border-bottom 1s, background-color 1s;
+  border: none;
+  border-bottom: 2px solid #222;
+  background-color: #222;
+  color: white;
+  margin-bottom: 10px;
 }
 
 input:hover, input:active, input:focus, select:hover, select:active, select:focus {
-       border-bottom: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 input[type="submit"] {
-       border-radius: 25px;
-       width: auto;
-       border: none;
-       margin: 20px;
+  border-radius: 25px;
+  width: auto;
+  border: none;
+  margin: 20px;
 }
 
 input[type="submit"]:hover {
-       background-color: green;
+  background-color: green;
 }
 
-legend{
-       margin: 10px;
+legend {
+  margin: 10px;
 }
 
 form {
-       margin: 100px;
+  margin: 100px;
 }
